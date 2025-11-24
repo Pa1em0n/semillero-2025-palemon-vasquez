@@ -1,0 +1,246 @@
+/*#87170b → Rojo oscuro (franja central)
+#19411c → Verde oscuro (franja superior)
+#f9c500 → Amarillo intenso (franja inferior)*/
+
+/*Creamos el fondo centrado de la cabecera*/
+  /* BARRA SUPERIOR */
+  header {
+    width: 100%;
+    background: var(--green);
+    color: var(--white);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    color: var(--white);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* APARTADOS 100% ANCHO */
+  .apartado {
+    width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;
+  }
+
+  /* Colores para distinguirlos visualmente (puedes quitarlos) */
+  .apartado:nth-child(1) { background: #ffffff; }
+  .apartado:nth-child(2) { background: #eeeeee; }
+  .apartado:nth-child(3) { background: #ffffff; }
+  .apartado:nth-child(4) { background: #eeeeee; }
+  .apartado:nth-child(5) { background: #ffffff; }
+
+  /* CONTENEDOR INTERNO (opcional) */
+  .contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+/*Estilizamos el menú de navegación*/
+menu {
+    background-color: #87170b; /* Rojo oscuro */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+button.primary {
+  background: #19411c;
+  color: #ffffff;
+}
+
+button.primary:hover {
+  background: #244e28; /* +10% más claro */
+}
+
+button.primary:active {
+  background: #133316; /* -10% más oscuro */
+}
+
+button.primary:focus {
+  outline: 3px solid #f9c500; /* foco ALTAMENTE visible */
+  outline-offset: 3px;
+}
+  :root {
+    --red: #87170b;
+    --green: #19411c;
+    --yellow: #f9c500;
+    --black: #0a0a0a;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #ffffff;
+    color: var(--black);
+  }
+/*
+*/
+  /* Main container */
+  .container-section-1 {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+    /* SECCIÓN DE IMAGEN + DESCRIPCIÓN */
+  .image-section {
+    flex: 2;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* IMAGE SECTION */
+  .image-box {
+    /* Make the image-box a fixed square and render as a circle */
+    flex: 0 0 auto;
+    width: 300px;
+    aspect-ratio: 1 / 1; /* keep square */
+    background: var(--white);
+    border: 2px solid var(--red);
+    border-radius: 50%; /* circle */
+    overflow: hidden; /* crop overflowing image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-weight: bold;
+  }
+
+  /* Image inside the circular box - cover and fill */
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* Description of image below */
+  .image-description {
+    padding: 12px;
+    border: 2px solid var(--red);
+    background: #fff4f2;
+    font-size: 15px;
+    color: var(--black);
+    border-radius: 4px;
+  }
+
+  /* Content box of buttons and text */
+  .content-box {
+    flex: 1;
+    background: var(--white);
+    border: 2px solid var(--green);
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .buttons button {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 2px solid var(--green);
+    cursor: pointer;
+    background: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.2s;
+  }
+
+    /* HOVER */
+  .buttons button:hover {
+    background: #244e28; /* verde +10% claro */
+  }
+    /* ACTIVE */
+  .buttons button:active {
+    background: #133316; /* verde -10% oscuro */
+  }
+  
+  /* FOCUS */
+  .buttons button:focus {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+  }
+
+    /* Versión botón secundario opcional */
+  .buttons .secondary {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+  }
+  .buttons .secondary:hover {
+    background: #ffe566;
+  }
+  .buttons .secondary:active {
+    background: #d9ac00;
+  }
+  .buttons .secondary:focus {
+    outline: 3px solid var(--green);
+  }
+
+
+  /*MOBILE: Pila vertical */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .image-box,
+    .content-box {
+      width: 100%;
+      height: auto;
+    }
+
+    .buttons {
+      justify-content: center;
+    }
+  }
+
+/*Estilo de contenedor SVG */
+.container-section-2 {
+  display: flex;
+  gap: 20px;             /* spacing between divs */
+}
+
+.box {
+  flex: 1;               /* equal width for all 3 */
+  padding: 2px;
+  background: #e1e1e1;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* MOBILE: stack vertically */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
