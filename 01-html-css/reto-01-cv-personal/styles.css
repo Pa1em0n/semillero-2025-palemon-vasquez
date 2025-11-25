@@ -27,18 +27,63 @@ h1, h2 {
 }
 
 a {
-  color: var(--accent-1);
+  color: var(--text-main);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: var(--bg-main);
 }
+p {
+  color: var(--text-main);
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0 auto 1rem auto;  /* Centra el bloque p */
+  text-align: left;          /* El texto se lee profesionalmente */
+  max-width: 700px;          /* Ancho para lectura profesional */
+}
+
+text {
+  fill: var(--text-main);
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+  font-weight: bold ;
+}
+
+/*Estilo global de botones*/
+
+  button {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 2px solid var(--text-main);
+    cursor: pointer;
+    background: var(--text-main);
+    color: var(--bg-main);
+    font-weight: bold;
+    transition: 0.2s;
+  }
+    /* HOVER */
+  button:hover {
+    background: var(--accent-2) 
+  }
+    /* ACTIVE */
+  button:active {
+    background: var(--accent-2) 
+  }
+  /* FOCUS */
+  button:focus {
+    outline: 3px solid var(--accent-1);
+    outline-offset: 3px;
+  }
+
 
 /*Creamos el fondo centrado de la cabecera*/
   /* BARRA SUPERIOR */
   header {
-    width: 100%;
+    flex: 1;
     background: var(--accent-2);
     color: var(--white);
     padding: 5px 5px;
@@ -50,7 +95,7 @@ a:hover {
 
 nav {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 5px;
     display: flex;
     justify-content: space-between;
     align-items: right;
@@ -59,8 +104,12 @@ nav {
   nav a {
     color: var(--white);
     margin-left: 15px;
-    text-decoration: none;
+    text-decoration:solid underline;
     font-size: 14px;
+    font-style: oblique;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1.5px;
+    font-weight: bold;
   }
 
   nav a:hover {
@@ -71,7 +120,7 @@ nav {
 
   }
 
-  /* APARTADOS 100% ANCHO */
+  /* Configuración general de contenedores */
   .container {
     width: 100%;
     padding: 1px 1px;
@@ -79,48 +128,22 @@ nav {
     margin-top: 15px;
     align-items: center;
     flex-direction: column;
-  
+    /*border: 2px solid #e9730b;*/
   }
   
-  /* MOBILE: stack vertically */
+  /* MOBILE: stack vertically for containers*/
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
 }
 
-/* Estilos de botones primarios */
-button.primary {
-  padding: 12px 24px;
-  border-radius: 10px;
-  border: 2px solid #77ACA2; /* Green Sheen */
-  cursor: pointer;
-  background: #77ACA2; /* Green Sheen */
-  color: #F4E9CD; /* Champagne */
-  font-weight: bold;
-  transition: background 0.2s;
-}
-/* Estilos de interacción */
-button.primary:hover {
-  background: #8ac0b8; /* Green Sheen (más claro) */
-}
-
-button.primary:active {
-  background: #031926; /* Rich Black (más oscuro) */
-}
-
-button.primary:focus {
-  outline: 3px solid #F4E9CD; /* Champagne para foco visible */
-  outline-offset: 3px;
-}
-
-
-
 /*
+  CONTENT-1 SECTION
 */
   /* Content Foto y descripción, presentación y botones */
   .content-1 {
-    margin-top: 15px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row; /* Por defecto horizontal */
     width:auto;
@@ -128,7 +151,7 @@ button.primary:focus {
     align-items: flex-start;
     justify-content: center; /* Centra horizontalmente */
     padding: 2px;
-    border: 2px solid #332213;
+    /*border: 2px solid var(--text-main);*/
   }
   /* SECCIÓN DE IMAGEN + DESCRIPCIÓN */
   .image-content {
@@ -138,25 +161,25 @@ button.primary:focus {
     align-items: center; /* alinea a la derecha */
     justify-content: center; /* Centra horizontalmente */
     gap: 5px;
+    margin-top: 5px;
     padding: 2px;  
-    border: #133316 2px solid;
+    /*border: 2px solid var(--accent-1);*/
   }
   /* IMAGE SECTION */
   .image-box {
     /* Make the image-box a fixed square and render as a circle */
     flex: 0 0 auto;
     width: 300px;
-    aspect-ratio: 1 / 1; /* keep square */
-    background: var(--white);
-    border: 2px solid var(--red);
-    border-radius: 50%; /* circle */
-    overflow: hidden; /* crop overflowing image */
+    aspect-ratio: 1 / 1; 
+    background: var(--accent-1);
+    border: 2px solid var(--accent-1);
+    border-radius: 50%;
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black);
+    color: var(--accent-1);
     font-weight: bold;
-  
   }
 
   /* Image inside the circular box - cover and fill */
@@ -169,11 +192,8 @@ button.primary:focus {
 /* Description of image below */
   .image-description {
     padding: 2px;
-    border: 2px solid var(--red);
-    background: #fff4f2;
     font-size: 12px;
-    color: var(--black);
-    border-radius: 4px;
+    color: var(--text-main);
     align-items: center;
     justify-content: center; /* Centra horizontalmente */
     display: inline-block;
@@ -185,8 +205,7 @@ button.primary:focus {
   .text-button-content {
     flex: 1;
     gap: 5px;
-    background: var(--white);
-    border: 2px solid var(--green);
+    /*border: 2px solid var(--accent-1);*/
     padding: 2px;   
     display: flex;
     flex-direction: column;
@@ -204,69 +223,15 @@ button.primary:focus {
     width: fit-content;
     height: fit-content;
   }
-
-  .buttons button {
-    padding: 12px 24px;
-    border-radius: 10px;
-    border: 2px solid var(--green);
-    cursor: pointer;
-    background: var(--green);
-    color: var(--white);
-    font-weight: bold;
-    transition: 0.2s;
-  }
-  /*Style of button*/
-    /* HOVER */
-  .buttons button:hover {
-    background: #244e28; /* verde +10% claro */
-  }
-    /* ACTIVE */
-  .buttons button:active {
-    background: #133316; /* verde -10% oscuro */
-  }
-  
-  /* FOCUS */
-  .buttons button:focus {
-    outline: 3px solid var(--yellow);
-    outline-offset: 3px;
-  }
-
-    /* Versión botón secundario opcional */
-  .buttons .secondary {
-    background: var(--yellow);
-    border-color: var(--yellow);
-    color: var(--black);
-  }
-  .buttons .secondary:hover {
-    background: #ffe566;
-  }
-  .buttons .secondary:active {
-    background: #d9ac00;
-  }
-  .buttons .secondary:focus {
-    outline: 3px solid var(--green);
-  }
-
-
   /*MOBILE: Pila vertical content-1*/
   @media (max-width: 768px) {
     .content-1 {
       flex-direction: column; /* Cambia a vertical */
     }
-
-    .image-box,
-    .content-box {
-      width: 100%;
-      height: auto;
-    }
-
-    .buttons {
-      justify-content: center;
-      width: fit-content;
-      height: fit-content;
-    }
   }
-
+/*
+  CONTENT-2 SECTION
+*/
   /* Content tres botones circulares */
 .content-2 {
     flex: 1;
@@ -277,31 +242,40 @@ button.primary:focus {
     align-items: center;
     justify-content: center; /* Centra horizontalmente */
 }
-
+/* Caja de cada botón circular */
 .box {
-  flex: 1;               /* equal width for all 3 */
   padding: 2px;
-  border: 2px solid var(--red);
-  background: #fffbfb;
+  /*border: 2px solid var(--accent-1);*/
+  background: var(--bg-main);
   text-align: center;
   border-radius: 6px;
   display: inline-block;
   width: fit-content;
   height: fit-content;
 }
+/* Estilo de los círculos SVG */
+circle {
+  transition: fill 0.3s ease;
+  fill: var(--accent-1);
+  stroke: var(--accent-2);
+  stroke-width: 3;
+}
 
 
-.grid-container {
+/*
+  CONTENT-3 SECTION
+*/
+.content-3 {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas */
     gap: 20px; /* Espacio entre tarjetas */
     max-width: 900px;
-    margin: 40px auto; /* Centrado */
+    margin: 50px auto; /* Centrado */
 }
 
 .card {
-    background-color: #2f2f4f;
-    border: 2px solid #4b4b7a;
+    background-color: var(--accent-1);
+    border: 2px solid var(--accent-2);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
@@ -310,6 +284,22 @@ button.primary:focus {
 .card h2 {
     margin-bottom: 15px;
     font-size: 20px;
-    color: #fff;
-    border-bottom: 1px solid #4b4b7a;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--bg-main);
+}
+.card p {
+    color: var(--text-main);
+    font-size: 14px;
+    line-height: 1.4;
+}
+/*MOBILE: Una columna en content-3*/
+@media (max-width: 768px) {
+    .content-3 {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}
+/* Estilo específico para el botón de descarga de CV */
+.download-cv {
+    margin-top: 20px;
+    text-align: center;
 }
