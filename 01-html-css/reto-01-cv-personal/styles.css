@@ -84,21 +84,31 @@ text {
   /* BARRA SUPERIOR */
   header {
     flex: 1;
-    background: var(--accent-2);
+    /*background: var(--accent-2);*/
     color: var(--white);
-    padding: 5px 5px;
+    padding: 1px 1px;
     position: sticky;
     top: 0;
     z-index: 10;
-    border: 2px solid var(--accent-1);
+    /*border: 2px solid var(--accent-1);*/
+  }
+  /* NAVEGACIÓN */
+  .navbar {
+    background-color: var(--accent-1);
+    overflow: hidden;
+    border-radius: 15px;
+    height: 35px;
+
   }
 
 nav {
-    max-width: 1200px;
-    margin: 5px;
+    max-width: 1150px;
+    margin: 3px;
     display: flex;
     justify-content: space-between;
     align-items: right;
+    padding: 5px;
+  
 }
 
   nav a {
@@ -125,7 +135,7 @@ nav {
     width: 100%;
     padding: 1px 1px;
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 20px;
     align-items: center;
     flex-direction: column;
     /*border: 2px solid #e9730b;*/
@@ -143,7 +153,7 @@ nav {
 */
   /* Content Foto y descripción, presentación y botones */
   .content-1 {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row; /* Por defecto horizontal */
     width:auto;
@@ -155,15 +165,16 @@ nav {
   }
   /* SECCIÓN DE IMAGEN + DESCRIPCIÓN */
   .image-content {
-    flex: 1;
+    /*flex: 1;*/
     display: flex;
     flex-direction: column; /* pila vertical */
     align-items: center; /* alinea a la derecha */
-    justify-content: center; /* Centra horizontalmente */
+    justify-content: left; /* Centra horizontalmente */
     gap: 5px;
     margin-top: 5px;
     padding: 2px;  
     /*border: 2px solid var(--accent-1);*/
+    width: auto;
   }
   /* IMAGE SECTION */
   .image-box {
@@ -203,8 +214,8 @@ nav {
 
   /* Content box of buttons and text */
   .text-button-content {
-    flex: 1;
-    gap: 5px;
+    /*flex: 1;*/
+    gap: 15px;
     /*border: 2px solid var(--accent-1);*/
     padding: 2px;   
     display: flex;
@@ -212,9 +223,29 @@ nav {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    width: auto;
+    margin-left: 20px;
+  }
+  .text-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* alinea a la izquierda */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 2px;
+    width: auto;
+    max-width: 500px;
+    /*border: 2px solid #031926;*/
   }
 
-  /* Buttons */
+  .parrafo-presentacion{
+    font-size: 1em;
+    color: var(--text-main);
+    margin: 0 0 16px 0;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+  /* Botón personalizado  */
   .buttons {
     display: flex;
     gap: 2px;
@@ -256,8 +287,8 @@ nav {
 /* Estilo de los círculos SVG */
 circle {
   transition: fill 0.3s ease;
-  fill: var(--accent-1);
-  stroke: var(--accent-2);
+  fill: var(--accent-2);
+  stroke: var(--accent-1);
   stroke-width: 3;
 }
 
@@ -273,21 +304,21 @@ circle {
     margin: 50px auto; /* Centrado */
 }
 
-.card {
-    background-color: var(--accent-1);
-    border: 2px solid var(--accent-2);
+.card-cv {
+    background-color: var(--accent-2);
+    border: 2px solid var(--accent-1);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
 }
 
-.card h2 {
+.card-cv h2 {
     margin-bottom: 15px;
     font-size: 20px;
     color: var(--text-main);
     border-bottom: 1px solid var(--bg-main);
 }
-.card p {
+.card-cv p {
     color: var(--text-main);
     font-size: 14px;
     line-height: 1.4;
@@ -302,4 +333,43 @@ circle {
 .download-cv {
     margin-top: 20px;
     text-align: center;
+}
+
+/* CONTENT-4 SECTION */
+.content-4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    }
+.card-project{
+    background-color: var(--accent-2);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.card-project img {
+    width: 100%;
+    height: auto;
+}
+.card-content {
+    padding: 15px;
+    flex: 1;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--text-main);
+}
+.card-content p {
+    color: var(--text-main);
+    font-size: 14px;
+    line-height: 1.4;
+}
+/*MOBILE: Una columna en content-4*/
+@media (max-width: 768px) {
+    .content-4 {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
 }
