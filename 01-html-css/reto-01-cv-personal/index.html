@@ -12,33 +12,35 @@
 <body>
     <header>
         <nav>   
-            <div class="logo"></div>
+            <div class="logo">
+                <!-- <a href="#c1">Logo</a> -->
+            </div>
             <div>
-                <a href="#a1">About Me</a>
-                <a href="#a2">Curriculum</a>
-                <a href="#a3">Projects</a>
-                <a href="#a4">Contact</a>
+                <a href="#c1">About Me</a>
+                <a href="#c2">Curriculum</a>
+                <a href="#c3">Projects</a>
+                <a href="#c4">Contact</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <div id= "a1" class="apartado">
-            <!--Elements a1-->
-            <div class="container-section-1">
+        <div id= "c1" class="container">
+            <!--Elements c1-->
+            <div class="content-1">
             <!-- IMAGEN + DESCRIPCIÓN -->
-                <div class="image-section">
+                <div class="image-content">
                     <div class="image-box">
-                        <img src="images/profile.jpg" alt="Foto de perfil">
+                        <img src="images/profile.png" alt="Foto de perfil">
                     </div>
                     <div class="image-description">
                         <h1>Palemon Vásquez García</h1>
                     </div>
-                    
                 </div>
 
                 <!-- TEXTO + BOTONES -->
-                <div class="content-box">
+                <div class="text-button-content">
+                    <div class="text-presentation">
                     <section>
                         <h1>Hola</h1>
                         <h2>Un poco de mí</h2>
@@ -46,6 +48,7 @@
                             y me apasiona el desarrollo web, automatización de procesos, digitalización 
                             y consultoría TIC, actualmente estoy aprendiendo FastAPI.</p>
                     </section>
+                    </div>
 
                     <div class="buttons">
                     <a href="https://github.com/pa1em0n" target="_blank">
@@ -60,51 +63,82 @@
             </div>
         
             <!-- SVG CIRCULOS -->
-            <div class="container-section-2">
+            <div class="content-2">
                 <div class="box">
-                <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
-                    <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
-                        font-size="15" fill="white" font-family="Arial">
-                        Curriculum
-                    </text>
-                </svg> 
+                    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                        <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
+                        <a href="#c2">
+                        <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
+                                font-size="15" fill="white" font-family="Arial">
+                                Curriculum
+                            </text>
+                        </a>
+                    </svg>
                 </div>
 
                 <div class="box">
-                <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
+                    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
+                    <a href="#c3">
                     <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
-                        font-size="15" fill="white" font-family="Arial">
-                        Proyectos
-                    </text>            
-                </svg> 
+                            font-size="15" fill="white" font-family="Arial">  
+                            Proyectos
+                        </text>
+                    </a>         
+                    </svg> 
                 </div>
 
                 <div class="box">
-                <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
-                    <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
-                        font-size="15" fill="white" font-family="Arial">
-                        Contacto
-                    </text>
-                </svg> 
+                    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="45" cx="50" cy="50" fill="red" stroke="green" stroke-width="3" opacity="0.5" />
+                        <a href="#c4">
+                        <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" 
+                                font-size="15" fill="white" font-family="Arial">
+                                Contacto
+                            </text>
+                        </a>
+                    </svg> 
                 </div>
             </div>
-        
-        <div id="a2" class="apartado"> 
+        </div>
+        <div id="c2" class="container"> 
             <!-- APARTADO CURRICULUM -->  
-            <section>
-                <h1>Currículum</h1>
-                <h2>Educación</h2>
-                <p>Ciencias de la computación en la Facultad de Ciencias de la UNAM.</p>
-            </section>
+
+            <div class="grid-container">
+                <div class="card"> <!-- Skills -->
+                    <h2>SKILLS</h2>
+                    <p>Programming Languages</p>
+                    <p>Web Development</p>
+                    <p>Database Management</p>
+                </div>
+                <div class="card"> <!-- Work Experience -->
+                    <h2>WORK EXPERIENCE</h2>
+                    <p><strong>2028 Web Developer</strong><br>ABC Company</p>
+                    <p><strong>2026 Web Development Intern</strong><br>XYZ Agency</p>
+                </div>
+                <div class="card"> <!-- Certification -->
+                    <h2>CERTIFICATION</h2>
+                    <ul>
+                        <li>Certified Web Developer</li>
+                        <li>Front-End Web Developer Certification</li>
+                        <li>JavaScript Developer Certification</li>
+                        <li>PHP Certification</li>
+                        <li>Responsive Web Design Certification</li>
+                    </ul>
+                </div>
+                <div class="card"> <!-- Education -->
+                    <h2>EDUCATION</h2>
+                    <p><strong>2028 XYZ University</strong><br>Bachelor of Science in Computer Science</p>
+                    <p><strong>2025 ABC Community College</strong><br>Associate Degree in Web Development</p>
+                </div>
+            </div>
+
             <div>
                 <a href="https://github.com/pa1em0n" target="_blank"><button>GitHub</button></a>
             </div>
         </div>
 
-        <div id="a3" class="apartado"> 
+        <div id="c3" class="container"> 
             <!-- APARTADO PROYECTOS--> 
             <section>
                 <h1>Proyectos</h1>
@@ -117,7 +151,7 @@
         </section>
         </div>
 
-        <div id="a4" class="apartado">
+        <div id="c4" class="container">
             <!-- APARTADO CONTACTO--> 
             <section>
             <h1>Contacto</h1>

@@ -2,25 +2,59 @@
 #19411c → Verde oscuro (franja superior)
 #f9c500 → Amarillo intenso (franja inferior)*/
 
+
+
+/*Se definen los colores basado en contraste aa/aaa*/
+:root {
+  --bg-main: #F4E9CD;       /* Fondo principal */
+  --text-main: #031926;     /* Texto principal AAA */
+  --text-secondary: #468189;/* Texto secundario AA */
+  --accent-1: #77ACA2;      /* Botones / enlaces AA */
+  --accent-2: #9DBEBB;      /* Fondos suaves */
+}
+
+/* Estilos globales */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 15px;
+}
+h1, h2 {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-1);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /*Creamos el fondo centrado de la cabecera*/
   /* BARRA SUPERIOR */
   header {
     width: 100%;
-    background: var(--green);
+    background: var(--accent-2);
     color: var(--white);
-    padding: 15px 20px;
+    padding: 5px 5px;
     position: sticky;
     top: 0;
     z-index: 10;
+    border: 2px solid var(--accent-1);
   }
 
-  nav {
+nav {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
+    align-items: right;
+}
 
   nav a {
     color: var(--white);
@@ -30,86 +64,82 @@
   }
 
   nav a:hover {
-    text-decoration: underline;
+    text-decoration:wavy underline;
+    text-decoration-color: var(--text-secondary); /* Metallic Seaweed (paleta) */
+    text-decoration-thickness: 2px; /* más visible */
+    
+
   }
 
   /* APARTADOS 100% ANCHO */
-  .apartado {
+  .container {
     width: 100%;
-    padding: 40px 20px;
+    padding: 1px 1px;
     margin: 0 auto;
-  }
-
-  /* Colores para distinguirlos visualmente (puedes quitarlos) */
-  .apartado:nth-child(1) { background: #ffffff; }
-  .apartado:nth-child(2) { background: #eeeeee; }
-  .apartado:nth-child(3) { background: #ffffff; }
-  .apartado:nth-child(4) { background: #eeeeee; }
-  .apartado:nth-child(5) { background: #ffffff; }
-
-  /* CONTENEDOR INTERNO (opcional) */
-  .contenido {
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-top: 15px;
+    align-items: center;
+    flex-direction: column;
+  
   }
   
-/*Estilizamos el menú de navegación*/
-menu {
-    background-color: #87170b; /* Rojo oscuro */
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
+  /* MOBILE: stack vertically */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 }
 
+/* Estilos de botones primarios */
 button.primary {
-  background: #19411c;
-  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: 2px solid #77ACA2; /* Green Sheen */
+  cursor: pointer;
+  background: #77ACA2; /* Green Sheen */
+  color: #F4E9CD; /* Champagne */
+  font-weight: bold;
+  transition: background 0.2s;
 }
-
+/* Estilos de interacción */
 button.primary:hover {
-  background: #244e28; /* +10% más claro */
+  background: #8ac0b8; /* Green Sheen (más claro) */
 }
 
 button.primary:active {
-  background: #133316; /* -10% más oscuro */
+  background: #031926; /* Rich Black (más oscuro) */
 }
 
 button.primary:focus {
-  outline: 3px solid #f9c500; /* foco ALTAMENTE visible */
+  outline: 3px solid #F4E9CD; /* Champagne para foco visible */
   outline-offset: 3px;
 }
-  :root {
-    --red: #87170b;
-    --green: #19411c;
-    --yellow: #f9c500;
-    --black: #0a0a0a;
-    --white: #ffffff;
-  }
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background: #ffffff;
-    color: var(--black);
-  }
+
+
 /*
 */
-  /* Main container */
-  .container-section-1 {
+  /* Content Foto y descripción, presentación y botones */
+  .content-1 {
+    margin-top: 15px;
     display: flex;
-    width: 100%;
-    gap: 20px;
+    flex-direction: row; /* Por defecto horizontal */
+    width:auto;
+    gap: 5px;
     align-items: flex-start;
+    justify-content: center; /* Centra horizontalmente */
+    padding: 2px;
+    border: 2px solid #332213;
   }
-
-    /* SECCIÓN DE IMAGEN + DESCRIPCIÓN */
-  .image-section {
-    flex: 2;
+  /* SECCIÓN DE IMAGEN + DESCRIPCIÓN */
+  .image-content {
+    flex: 1;
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* pila vertical */
+    align-items: center; /* alinea a la derecha */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 5px;
+    padding: 2px;  
+    border: #133316 2px solid;
   }
   /* IMAGE SECTION */
   .image-box {
@@ -126,6 +156,7 @@ button.primary:focus {
     justify-content: center;
     color: var(--black);
     font-weight: bold;
+  
   }
 
   /* Image inside the circular box - cover and fill */
@@ -137,31 +168,41 @@ button.primary:focus {
 }
 /* Description of image below */
   .image-description {
-    padding: 12px;
+    padding: 2px;
     border: 2px solid var(--red);
     background: #fff4f2;
-    font-size: 15px;
+    font-size: 12px;
     color: var(--black);
     border-radius: 4px;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
   }
 
   /* Content box of buttons and text */
-  .content-box {
+  .text-button-content {
     flex: 1;
+    gap: 5px;
     background: var(--white);
     border: 2px solid var(--green);
-    padding: 20px;
-    height: 300px;
+    padding: 2px;   
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
   }
 
   /* Buttons */
   .buttons {
     display: flex;
-    gap: 20px;
+    gap: 2px;
     margin-top: 20px;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
   }
 
   .buttons button {
@@ -174,7 +215,7 @@ button.primary:focus {
     font-weight: bold;
     transition: 0.2s;
   }
-
+  /*Style of button*/
     /* HOVER */
   .buttons button:hover {
     background: #244e28; /* verde +10% claro */
@@ -207,10 +248,10 @@ button.primary:focus {
   }
 
 
-  /*MOBILE: Pila vertical */
+  /*MOBILE: Pila vertical content-1*/
   @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
+    .content-1 {
+      flex-direction: column; /* Cambia a vertical */
     }
 
     .image-box,
@@ -221,26 +262,54 @@ button.primary:focus {
 
     .buttons {
       justify-content: center;
+      width: fit-content;
+      height: fit-content;
     }
   }
 
-/*Estilo de contenedor SVG */
-.container-section-2 {
-  display: flex;
-  gap: 20px;             /* spacing between divs */
+  /* Content tres botones circulares */
+.content-2 {
+    flex: 1;
+    flex-direction: row; /* Por defecto horizontal */
+    display: flex;
+    width: 100%;
+    gap: 2px;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
 }
 
 .box {
   flex: 1;               /* equal width for all 3 */
   padding: 2px;
-  background: #e1e1e1;
+  border: 2px solid var(--red);
+  background: #fffbfb;
   text-align: center;
   border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
 }
 
-/* MOBILE: stack vertically */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 20px; /* Espacio entre tarjetas */
+    max-width: 900px;
+    margin: 40px auto; /* Centrado */
+}
+
+.card {
+    background-color: #2f2f4f;
+    border: 2px solid #4b4b7a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #fff;
+    border-bottom: 1px solid #4b4b7a;
 }
