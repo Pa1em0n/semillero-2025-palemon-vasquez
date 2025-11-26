@@ -84,12 +84,15 @@ text {
   /* BARRA SUPERIOR */
   header {
     flex: 1;
+    width: 100%;
     /*background: var(--accent-2);*/
     color: var(--white);
     padding: 1px 1px;
-    position: sticky;
+    position:sticky;
     top: 0;
     z-index: 10;
+    align-items: center;
+    justify-content: center;
     /*border: 2px solid var(--accent-1);*/
   }
   /* NAVEGACIÓN */
@@ -98,11 +101,12 @@ text {
     overflow: hidden;
     border-radius: 15px;
     height: 35px;
+    align-items: center;
 
   }
 
 nav {
-    max-width: 1150px;
+    max-width: 100%;
     margin: 3px;
     display: flex;
     justify-content: space-between;
@@ -349,9 +353,42 @@ circle {
     display: flex;
     flex-direction: column;
 }
+/* ----- Imagenes del card: mismo tamaño ----- */
 .card-project img {
     width: 100%;
-    height: auto;
+    height: 240px;              /* Ajusta este valor según tu diseño */
+    object-fit: cover;          /* Recorta sin deformar */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* ----- Contenedor del card ----- */
+.card-project {
+    background: #d3e3dd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ----- Botón 100% ancho ----- */
+.card-project button {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    background: #001f33; /* cambia color si deseas */
+    color: #fff;
+    border: none;
+    border-radius: 0 0 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Para que el <a> no rompa el ancho */
+.card-project a {
+    text-decoration: none;
+    width: 100%;
 }
 .card-content {
     padding: 15px;
