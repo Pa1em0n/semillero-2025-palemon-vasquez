@@ -1,9 +1,3 @@
-/*#87170b → Rojo oscuro (franja central)
-#19411c → Verde oscuro (franja superior)
-#f9c500 → Amarillo intenso (franja inferior)*/
-
-
-
 /*Se definen los colores basado en contraste aa/aaa*/
 :root {
   --bg-main: #F4E9CD;       /* Fondo principal */
@@ -33,7 +27,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: var(--bg-main);
+  color: var(--text-secondary);
 }
 p {
   color: var(--text-main);
@@ -41,9 +35,9 @@ p {
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
-  margin: 0 auto 1rem auto;  /* Centra el bloque p */
-  text-align: left;          /* El texto se lee profesionalmente */
-  max-width: 700px;          /* Ancho para lectura profesional */
+  margin: 0 auto 1rem auto;  
+  text-align: left;         
+  max-width: 700px;          
 }
 
 text {
@@ -85,7 +79,6 @@ text {
   header {
     flex: 1;
     width: 100%;
-    /*background: var(--accent-2);*/
     color: var(--white);
     padding: 1px 1px;
     position:sticky;
@@ -93,7 +86,6 @@ text {
     z-index: 10;
     align-items: center;
     justify-content: center;
-    /*border: 2px solid var(--accent-1);*/
   }
   /* NAVEGACIÓN */
   .navbar {
@@ -128,9 +120,8 @@ nav {
 
   nav a:hover {
     text-decoration:wavy underline;
-    text-decoration-color: var(--text-secondary); /* Metallic Seaweed (paleta) */
-    text-decoration-thickness: 2px; /* más visible */
-    
+    text-decoration-color: var(--text-secondary); 
+    text-decoration-thickness: 2px; 
 
   }
 
@@ -142,10 +133,10 @@ nav {
     margin-top: 20px;
     align-items: center;
     flex-direction: column;
-    /*border: 2px solid #e9730b;*/
+    
   }
   
-  /* MOBILE: stack vertically for containers*/
+  /* Configuración vertical de contenedores  para dispositivos móviles */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -180,9 +171,8 @@ nav {
     /*border: 2px solid var(--accent-1);*/
     width: auto;
   }
-  /* IMAGE SECTION */
+  /* SECCIÓN DE IMAGEN */
   .image-box {
-    /* Make the image-box a fixed square and render as a circle */
     flex: 0 0 auto;
     width: 300px;
     aspect-ratio: 1 / 1; 
@@ -197,14 +187,14 @@ nav {
     font-weight: bold;
   }
 
-  /* Image inside the circular box - cover and fill */
+  /* Imagen dentro del círculo - cubrir y llenar */
   .image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-/* Description of image below */
+/* Descripción de la imagen debajo */
   .image-description {
     padding: 2px;
     font-size: 12px;
@@ -216,7 +206,7 @@ nav {
     height: fit-content;
   }
 
-  /* Content box of buttons and text */
+  /* Caja de contenido de botones y texto */
   .text-button-content {
     /*flex: 1;*/
     gap: 15px;
@@ -247,8 +237,20 @@ nav {
     margin: 0 0 16px 0;
     text-align: justify;
     line-height: 1.4;
+    animation-duration: 3s;
+    animation-name: slidein;
 }
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
   /* Botón personalizado  */
   .buttons {
     display: flex;
@@ -258,10 +260,10 @@ nav {
     width: fit-content;
     height: fit-content;
   }
-  /*MOBILE: Pila vertical content-1*/
+  /* Configuración vertical de content-1  para dispositivos móviles */
   @media (max-width: 768px) {
     .content-1 {
-      flex-direction: column; /* Cambia a vertical */
+      flex-direction: column; 
     }
   }
 /*
@@ -327,7 +329,8 @@ circle {
     font-size: 14px;
     line-height: 1.4;
 }
-/*MOBILE: Una columna en content-3*/
+
+/* Configuración vertical de content-3  para dispositivos móviles */
 @media (max-width: 768px) {
     .content-3 {
         grid-template-columns: 1fr; /* Una columna en móvil */
@@ -356,8 +359,8 @@ circle {
 /* ----- Imagenes del card: mismo tamaño ----- */
 .card-project img {
     width: 100%;
-    height: 240px;              /* Ajusta este valor según tu diseño */
-    object-fit: cover;          /* Recorta sin deformar */
+    height: 240px;             
+    object-fit: cover;          
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -377,7 +380,7 @@ circle {
     width: 100%;
     display: block;
     padding: 12px;
-    background: #001f33; /* cambia color si deseas */
+    background: #001f33; 
     color: #fff;
     border: none;
     border-radius: 0 0 10px 10px;
@@ -404,7 +407,7 @@ circle {
     font-size: 14px;
     line-height: 1.4;
 }
-/*MOBILE: Una columna en content-4*/
+/* Configuración vertical de content-4  para dispositivos móviles */
 @media (max-width: 768px) {
     .content-4 {
         grid-template-columns: 1fr; /* Una columna en móvil */
