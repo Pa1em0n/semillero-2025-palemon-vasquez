@@ -1,6 +1,6 @@
 /*Se definen los colores basado en contraste aa/aaa*/
 :root {
-  --bg-main: #F4E9CD;       /* Fondo principal */
+  --bg-main: #F8F0DD;       /* Fondo principal */
   --text-main: #031926;     /* Texto principal AAA */
   --text-secondary: #468189;/* Texto secundario AA */
   --accent-1: #77ACA2;      /* Botones / enlaces AA */
@@ -92,12 +92,16 @@ text {
     background-color: var(--accent-1);
     overflow: hidden;
     border-radius: 15px;
-    height: 35px;
+    height:auto;
     align-items: center;
-
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    align-items: center;
   }
 
 nav {
+    flex: auto;
     max-width: 100%;
     margin: 3px;
     display: flex;
@@ -108,7 +112,7 @@ nav {
 }
 
   nav a {
-    color: var(--white);
+    color: var(--text-main);
     margin-left: 15px;
     text-decoration:solid underline;
     font-size: 14px;
@@ -120,10 +124,17 @@ nav {
 
   nav a:hover {
     text-decoration:wavy underline;
-    text-decoration-color: var(--text-secondary); 
+    text-decoration-color: var(--bg-main); 
     text-decoration-thickness: 2px; 
 
   }
+
+  .ubicacion {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+
 
   /* Configuración general de contenedores */
   .container {
@@ -135,7 +146,13 @@ nav {
     flex-direction: column;
     
   }
-  
+  /*Configuración de titulos de contenedores*/
+  .titulos {
+    font-size: 2rem;
+    color: var(--text-main);
+    text-align: center;
+    margin-bottom: 20px;
+  }
   /* Configuración vertical de contenedores  para dispositivos móviles */
 @media (max-width: 768px) {
   .container {
@@ -228,9 +245,14 @@ nav {
     padding: 2px;
     width: auto;
     max-width: 500px;
-    /*border: 2px solid #031926;*/
   }
 
+  .dato-contacto{
+    padding: 1px;
+    width: auto;
+    font-weight: bold;
+    
+  }
   .parrafo-presentacion{
     font-size: 1em;
     color: var(--text-main);
@@ -240,6 +262,8 @@ nav {
     animation-duration: 3s;
     animation-name: slidein;
 }
+
+
 @keyframes slidein {
   from {
     margin-left: 100%;
@@ -328,6 +352,26 @@ circle {
     color: var(--text-main);
     font-size: 14px;
     line-height: 1.4;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 15px;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  margin-top: 5px;
+}
+
+.download-cv {
+    margin-top: 20px;
+    text-align: center;
 }
 
 /* Configuración vertical de content-3  para dispositivos móviles */
@@ -337,42 +381,55 @@ circle {
     }
 }
 /* Estilo específico para el botón de descarga de CV */
-.download-cv {
-    margin-top: 20px;
-    text-align: center;
-}
+
 
 /* CONTENT-4 SECTION */
 .content-4 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    }
-.card-project{
-    background-color: var(--accent-2);
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
     display: flex;
-    flex-direction: column;
-}
-/* ----- Imagenes del card: mismo tamaño ----- */
-.card-project img {
-    width: 100%;
-    height: 240px;             
-    object-fit: cover;          
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    overflow-y:auto;
+    padding: 16px;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 10px;
 }
 
-/* ----- Contenedor del card ----- */
-.card-project {
-    background: #d3e3dd;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card-project{
+  margin-right: 10px;
+  position: relative;
+  background: var(--accent-2);
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
+}
+.card-project img {
+    width: 350px;
+    object-fit: cover;
+    height: 250px;
+
+}
+
+.card-content {
+    position:relative;
+    bottom: 0;
+    padding: 1px;
+    background-color : var(--accent-2);
+    color: var(--text-main);
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--text-main);
+}
+.card-project a {
+    text-decoration: none;
+    width: 100%;
+}
+
+.card-content p {
+    color: var(--text-main);
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 20px;
 }
 
 /* ----- Botón 100% ancho ----- */
@@ -380,36 +437,67 @@ circle {
     width: 100%;
     display: block;
     padding: 12px;
-    background: #001f33; 
-    color: #fff;
-    border: none;
-    border-radius: 0 0 10px 10px;
-    font-size: 14px;
-    cursor: pointer;
 }
 
-/* Para que el <a> no rompa el ancho */
-.card-project a {
-    text-decoration: none;
-    width: 100%;
-}
-.card-content {
-    padding: 15px;
-    flex: 1;
-}
 
-.card-content h3 {
-    margin-top: 0;
-    color: var(--text-main);
-}
-.card-content p {
-    color: var(--text-main);
-    font-size: 14px;
-    line-height: 1.4;
-}
+
 /* Configuración vertical de content-4  para dispositivos móviles */
 @media (max-width: 768px) {
     .content-4 {
-        grid-template-columns: 1fr; /* Una columna en móvil */
+        flex-direction:column;
+    }
+}
+
+/* Sección de contacto */
+.content-5 {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+
+.contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    background: var(--accent-2);
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.contact-item .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+
+@media (min-width: 700px) {
+    .contact-grid {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-item {
+        width: 32%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-item .icon {
+        margin-bottom: 10px;
+        margin-right: 0;
     }
 }
