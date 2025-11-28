@@ -1,10 +1,13 @@
 # SemilleroZ2H
-bootcamp-proyectos/
+semillero-2025-palemon-vasquez/
 │
-├── README.md  # Descripción general
-├── proyecto-1/
-│   ├── README.md
-│   ├── código
+├── README.md  # Descripción de estructura general
+├── 01-html-css/
+|    |__README.md
+│    |__reto-01-cv-personal   
+|       ├── README.md
+│       ├── index.html
+|       |__styles.css
 │
 ├── proyecto-2/
 │   ├── README.md
